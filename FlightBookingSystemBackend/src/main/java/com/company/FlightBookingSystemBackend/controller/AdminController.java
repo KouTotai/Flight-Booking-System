@@ -13,21 +13,21 @@ import javax.validation.Valid;
 
 @Slf4j
 @RestController
-@RequestMapping("User")
+@RequestMapping("Admin")
 public class AdminController {
     @Autowired
     private AdminService adminService;
 
     @GetMapping("/welcome")
     public String admin(){
-        return ("<h1> Welcome User</h1>");
+        return ("<h1> Welcome Admin</h1>");
     }
 
-    @ApiOperation("Add a new  User")
+    @ApiOperation("Add a new Admin")
     @PostMapping("/register")
     public ResponseEntity<Admin> registerAdmin(@Valid @RequestBody Admin admin) {
         Admin adminNew = adminService.addAdmin(admin);
-        log.info("Added a new UAdmin");
+        log.info("Added a new Admin");
         return new ResponseEntity<>(adminNew, HttpStatus.CREATED);
     }
 

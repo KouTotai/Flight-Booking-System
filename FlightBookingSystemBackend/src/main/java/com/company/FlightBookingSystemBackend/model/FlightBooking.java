@@ -11,7 +11,7 @@ import java.util.Set;
 @Data
 @NoArgsConstructor
 @Entity
-@Table(name = "flight")
+@Table(name = "flight_booking")
 public class FlightBooking {
 
     @Id
